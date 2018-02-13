@@ -1,5 +1,6 @@
 
 function validate() {
+ // inputs object
  var user = document.getElementById ("username");
  var address = document.getElementById ("address");
  var phone = document.getElementById ("number_phone");
@@ -7,49 +8,57 @@ function validate() {
  var pass = document.getElementById ("password");
  var pass2 = document.getElementById ("password_repeat")
 
-
+ /*// Errors message.
+ var userEror = document.getElementById ("userError");
+ var addressEror = document.getElementById ("addressError");
+ var phoneEror = document.getElementById ("phoneError");
+ var mailEror = document.getElementById ("mailError");
+ var passEror = document.getElementById ("passError");
+ var pass2Eror = document.getElementById ("pass2Error");*/
 
   user = document.getElementById ("username").value;
   if (user === "") {
-      alert ("Ведіть Ваше імя");
+      document.getElementById ("userError");
   } else {
-      alert ("Поле Ваше імя- заповнено");
+      document.getElementById ("userGood");
   };
-   
-  
+ 
+
   address = document.getElementById ("address").value;
   if (address === "") {
-      alert ("Ведіть Ваш адрес");
+      document.getElementById ("addressError");
   } else {
-      alert ("поле Ваш адрес - заповнено");
+      document.getElementById ("addressGood");
   };
+ 
   
-
   phone = document.getElementById ("number_phone").value;
   if (phone === "") {
-      alert ("Ведіть Ваш номер телефону");
+      document.getElementById ("phoneError");
   } else {
-      alert ("поле Ваш номер телефону - заповнено");
+      document.getElementById ("phoneGood");
   };
 
-
+  
   mail = document.getElementById ("email").value;
   if (mail === "") {
-      alert ("Ведіть вашу електронну почту");
+      document.getElementById ("mailError");
   } else {
-      alert ("Електронна почта - заповнено");
+      document.getElementById ("mailGood");
   };
 
-
+  
   pass = document.getElementById ("password").value;
   pass2 = document.getElementById ("password_repeat").value;
   if (pass === "") {
-      alert ("Ведіть пароль");
+      document.getElementById ("passError");
   } else if (pass2 === "") {
-      alert ("Підтвердіть пароль")
+      document.getElementById ("pass2Error");
   } else if (pass != pass2) {
-      alert ("паролі не співпадають");
-    }
+      document.getElementById ("passisnoGood");
+  } else {
+    document.getElementById ("passisGood");
+  }
   };
 
 

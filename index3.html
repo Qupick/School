@@ -16,7 +16,8 @@
 				<span>Ваше імя* </span>
 
 				<input type="text" class="reg" id="username" maxlength="32" minlength="4" required>
-
+					<h1 id="userError" style="display:none">Ведіть Ваше ім"я</h1>
+					<h2 id="userGood" style="display:none">Поле заповнено.</h2>
 
 				<ul class="input-requirements">
 					<li>Ім"я повинно бути не менше 4 символів і не більше 32</li>
@@ -29,7 +30,9 @@
 			<label for="Address">
 				<span>Ваш адрес*</span>
 
-				<input type="text" class="reg" id="address" maxlength="255" required>
+				<textarea type="text" class="reg" id="address" maxlength="255" required></textarea>
+					<h1 id="addressError" style="display:none">Ведіть Вашу адресу!</h1>
+					<h2 id="addressGood" style="display:none">Поле заповнено.</h2>
 
 				<ul class="input-requirements">
 					<li> Дозволено для ведення 255 букв</li>
@@ -43,6 +46,8 @@
 				<span>Ваш номер телефону*</span>
 				
 				<input type="number" class="reg" id="number_phone" maxlength="13" required>
+					<h1 id="numberError" style="display:none">Ведіть номер телефону!</h1>
+					<h2 id="numberGood" style="display:none">Поле заповнено.</h2>
 
 				<ul class="input-requirements"> 
 					<li> Максимальна кількість чисел сягає - 13</li>
@@ -55,6 +60,8 @@
 			<label for="email">
 				<span>Ведіть @mail.*</span>
 				<input type="text" class="reg" id="email" required>
+					<h1 id="mailError" style="display:none">Ведіть електронну скриньку!</h1>
+					<h2 id="mailGood" style="display:none">Поле заповнено.</h2>
 
 				<ul class="input-requirements"> 
 					<li> Поле повинно виглядати some.email@gmail.com або аналогічно</li>
@@ -66,6 +73,8 @@
 				<span>Пароль*</span>
 
 				<input type="password" class="reg" id="password" maxlength="100" minlength="6" required>
+					<h1 id="pass1Error" style="display:none">Ведіть пароль!</h1>
+					<h2 id="pass1Good" style="display:none">Поле заповнено.</h2>
 
 				<ul class="input-requirements">
 					<li>Мінімальна кількість символів для паролю - 6, максимальна - 100</li>
@@ -77,6 +86,10 @@
 			<label for="password_repeat">
 				<span>Підтвердження пароля:*</span>
 				<input type="password"  id="password_repeat" maxlength="100" minlength="6" required>
+					<h1 id="pass2Error" style="display:none">Підтвердіть пароль!!</h1>
+					<h2 id="passisGood" style="display:none">паролі співпадають.</h2>
+					<h2 id="passisnoGood" style="display:none">паролі не співпадають.</h2>
+
 			</label>
 			
 
@@ -106,7 +119,8 @@
 
 			<br>
 
-			<input type="button" style="display:block" onclick="validate()" value="Реєстрація">
+
+			<input type="button" style="display:block;" onclick="validate()" value="Реєстрація">
  
 		</form>
 	</div>
