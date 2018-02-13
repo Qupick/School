@@ -1,24 +1,22 @@
-<!DOCKTYPE>
 <!DOCTYPE html>
 <html>
 <head>
-
-<meta charset="utf-8">
-<script src="m3.js"></script>
-
-</head>	
-	<title>Validation</title>
+	<meta charset="utf-8">
+	<script src="valid.js"></script>
+	<link rel="stylesheet" href="IndexCss.css">
+	<title>Validation</title>	
 </head>
 <body>
 
-<div class="container">
-		<form class="registration">
+<div class="container" >
+		<form class="registration" novalidate>
 			<h1>Реэстрація</h1>
 
 			<label for="username">
-				<span>Ваше імя</span>
+				<span>Ваше імя* </span>
 
-				<input type="text" id="username" maxlength="32" minlength="4" required>
+				<input type="text" class="reg" id="username" maxlength="32" minlength="4" required>
+
 
 				<ul class="input-requirements">
 					<li>Ім"я повинно бути не менше 4 символів і не більше 32</li>
@@ -29,9 +27,9 @@
 			
 
 			<label for="Address">
-				<span>Ваш адрес</span>
+				<span>Ваш адрес*</span>
 
-				<input type="text" id="Address" maxlength="255" required>
+				<input type="text" class="reg" id="address" maxlength="255" required>
 
 				<ul class="input-requirements">
 					<li> Дозволено для ведення 255 букв</li>
@@ -42,9 +40,9 @@
 			
 
 			<label for="number_phone">
-				<span>Ваш номер телефону</span>
+				<span>Ваш номер телефону*</span>
 				
-				<input type="number" id="number_phone" maxlength="13" required>
+				<input type="number" class="reg" id="number_phone" maxlength="13" required>
 
 				<ul class="input-requirements"> 
 					<li> Максимальна кількість чисел сягає - 13</li>
@@ -55,8 +53,8 @@
 
 
 			<label for="email">
-				<span>Ведіть @mail.</span>
-				<input type="text" id="@email" required>
+				<span>Ведіть @mail.*</span>
+				<input type="text" class="reg" id="email" required>
 
 				<ul class="input-requirements"> 
 					<li> Поле повинно виглядати some.email@gmail.com або аналогічно</li>
@@ -65,9 +63,9 @@
 
 
 			<label for="password">
-				<span>Пароль</span>
+				<span>Пароль*</span>
 
-				<input type="password" id="password" maxlength="100" minlength="6" required>
+				<input type="password" class="reg" id="password" maxlength="100" minlength="6" required>
 
 				<ul class="input-requirements">
 					<li>Мінімальна кількість символів для паролю - 6, максимальна - 100</li>
@@ -76,34 +74,42 @@
 			</label>
 
 			
+			<label for="password_repeat">
+				<span>Підтвердження пароля:*</span>
+				<input type="password"  id="password_repeat" maxlength="100" minlength="6" required>
+			</label>
+			
+
 
 			<label for="select">
-				<span>Виберіть один з трьох пунктів:</span>
+				<span>Виберіть один з трьох пунктів:*</span>
 
-			<input type="select" id="select" required>
-				<select> Пункт 1 </select>
-				<select> Пункт 2 </select>
-				<select> Пункт 3 </select>
+				<select> 
+					<option>  Пункт 1.  </option>
+					<option>  Пункт 3.  </option>
+					<option>  Пункт 3.  </option>
+				</select>
+				
 			</label>
 
 
 
 			<label for="Paymen">
-				<span> Виберіть спосіб оплати:</span>
-			<input type="Paymen" id="Paymen">
-				<select> 1 </select>
-				<select> 2 </select>
-				<select> 3 </select>
+				<span> Виберіть спосіб оплати:*</span>
+				
+				<select> 
+				 <option> Пункт 1. </option>
+				 <option> Пункт 2. </option>
+				 <option> Пункт 3. </option> 
+				</select>
 			</label>
 
 			<br>
 
-			<input type="submit">	
-
+			<input type="button" style="display:block" onclick="validate()" value="Реєстрація">
+ 
 		</form>
 	</div>
-
-</form>
 
 </body>
 </html>
