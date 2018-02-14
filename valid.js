@@ -2,7 +2,7 @@
 function validate() {
  // inputs object
  var user = document.getElementById ("username");
- var address = document.getElementById ("address");
+ var addressa = document.getElementById ("address");
  var phone = document.getElementById ("number_phone");
  var mail = document.getElementById ("email");
  var pass = document.getElementById ("password");
@@ -14,51 +14,39 @@ function validate() {
  var phoneEror = document.getElementById ("phoneError");
  var mailEror = document.getElementById ("mailError");
  var passEror = document.getElementById ("passError");
- var pass2Eror = document.getElementById ("pass2Error");*/
-
-  user = document.getElementById ("username").value;
-  if (user === "") {
-      document.getElementById ("userError");
+ var pass2Eror = document.getElementById ("pass2Error");
+*/
+  username = user.value;
+  if (username === "") {
+      document.getElementById ("userError").style.display="block";
   } else {
-      document.getElementById ("userGood");
+      document.getElementById ("userGood").style.display="block";
   };
  
-
-  address = document.getElementById ("address").value;
+  address = addressa.value;
   if (address === "") {
-      document.getElementById ("addressError");
-  } else {
-      document.getElementById ("addressGood");
+      document.getElementById ("addressError").style.display="block";
   };
- 
-  
-  phone = document.getElementById ("number_phone").value;
+
+  phone = number_phone.value;
   if (phone === "") {
-      document.getElementById ("phoneError");
-  } else {
-      document.getElementById ("phoneGood");
+      document.getElementById ("numberError").style.display="block";
   };
-
   
-  mail = document.getElementById ("email").value;
+  mail = email.value;
   if (mail === "") {
-      document.getElementById ("mailError");
-  } else {
-      document.getElementById ("mailGood");
+      document.getElementById ("mailError").style.display="block";
   };
-
   
-  pass = document.getElementById ("password").value;
-  pass2 = document.getElementById ("password_repeat").value;
+  pass2 = password_repeat.value;
+  pass = password.value;
   if (pass === "") {
-      document.getElementById ("passError");
-  } else if (pass2 === "") {
-      document.getElementById ("pass2Error");
+      document.getElementById ("pass1Error").style.display="block";
   } else if (pass != pass2) {
-      document.getElementById ("passisnoGood");
+      document.getElementById ("passisnoGood").style.display="block";
   } else {
-    document.getElementById ("passisGood");
-  }
+    document.getElementById ("passisGood").style.display="block";
+  };
   };
 
 

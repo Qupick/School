@@ -2,22 +2,22 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<script src="valid.js"></script>
+	<script src="valid.js" ></script>
 	<link rel="stylesheet" href="IndexCss.css">
 	<title>Validation</title>	
 </head>
 <body>
 
-<div class="container" >
-		<form class="registration" novalidate>
+<div class="container" onsubmit="return validate();" >
+		<form class="registration" >
 			<h1>Реэстрація</h1>
 
 			<label for="username">
 				<span>Ваше імя* </span>
 
-				<input type="text" class="reg" id="username" maxlength="32" minlength="4" required>
-					<h1 id="userError" style="display:none">Ведіть Ваше ім"я</h1>
-					<h2 id="userGood" style="display:none">Поле заповнено.</h2>
+				<input type="text"  class="reg" id="username" maxlength="32" minlength="4" required >
+					<h3 id="userError" style="display:none">Ведіть Ваше ім"я</h3>
+					<h3 id="userGood" style="display:none">Поле заповнено.</h3>
 
 				<ul class="input-requirements">
 					<li>Ім"я повинно бути не менше 4 символів і не більше 32</li>
@@ -31,8 +31,8 @@
 				<span>Ваш адрес*</span>
 
 				<textarea type="text" class="reg" id="address" maxlength="255" required></textarea>
-					<h1 id="addressError" style="display:none">Ведіть Вашу адресу!</h1>
-					<h2 id="addressGood" style="display:none">Поле заповнено.</h2>
+					<h3 id="addressError" style="display:none">Ведіть Вашу адресу!</h3>
+					<h3 id="addressGood" style="display:none">Поле заповнено.</h3>
 
 				<ul class="input-requirements">
 					<li> Дозволено для ведення 255 букв</li>
@@ -45,9 +45,9 @@
 			<label for="number_phone">
 				<span>Ваш номер телефону*</span>
 				
-				<input type="number" class="reg" id="number_phone" maxlength="13" required>
-					<h1 id="numberError" style="display:none">Ведіть номер телефону!</h1>
-					<h2 id="numberGood" style="display:none">Поле заповнено.</h2>
+				<input type="number" value="" class="reg" id="number_phone" maxlength="13" required>
+					<h3 id="numberError" style="display:none">Ведіть номер телефону!</h3>
+					<h3 id="numberGood" style="display:none">Поле заповнено.</h3>
 
 				<ul class="input-requirements"> 
 					<li> Максимальна кількість чисел сягає - 13</li>
@@ -59,10 +59,9 @@
 
 			<label for="email">
 				<span>Ведіть @mail.*</span>
-				<input type="text" class="reg" id="email" required>
-					<h1 id="mailError" style="display:none">Ведіть електронну скриньку!</h1>
-					<h2 id="mailGood" style="display:none">Поле заповнено.</h2>
-
+				<input type="email" class="reg" id="email" required>
+					<h3 id="mailError" style="display:none">Ведіть електронну скриньку!</h3>
+					
 				<ul class="input-requirements"> 
 					<li> Поле повинно виглядати some.email@gmail.com або аналогічно</li>
 				</ul>
@@ -73,8 +72,8 @@
 				<span>Пароль*</span>
 
 				<input type="password" class="reg" id="password" maxlength="100" minlength="6" required>
-					<h1 id="pass1Error" style="display:none">Ведіть пароль!</h1>
-					<h2 id="pass1Good" style="display:none">Поле заповнено.</h2>
+					<h3 id="pass1Error" style="display:none">Ведіть пароль!</h3>
+					<h3 id="pass1Good" style="display:none">Поле заповнено.</h3>
 
 				<ul class="input-requirements">
 					<li>Мінімальна кількість символів для паролю - 6, максимальна - 100</li>
@@ -86,9 +85,9 @@
 			<label for="password_repeat">
 				<span>Підтвердження пароля:*</span>
 				<input type="password"  id="password_repeat" maxlength="100" minlength="6" required>
-					<h1 id="pass2Error" style="display:none">Підтвердіть пароль!!</h1>
-					<h2 id="passisGood" style="display:none">паролі співпадають.</h2>
-					<h2 id="passisnoGood" style="display:none">паролі не співпадають.</h2>
+					<h3 id="pass2Error" style="display:none">Підтвердіть пароль!!</h3>
+					<h3 id="passisGood" style="display:none">паролі співпадають.</h3>
+					<h3 id="passisnoGood" style="display:none">паролі не співпадають.</h3>
 
 			</label>
 			
@@ -120,7 +119,7 @@
 			<br>
 
 
-			<input type="button" style="display:block;" onclick="validate()" value="Реєстрація">
+			<input type="button" style="display:block;" onclick="validate()" value="Register">
  
 		</form>
 	</div>
