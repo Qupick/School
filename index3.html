@@ -8,8 +8,8 @@
 </head>
 <body>
 
-<div class="container" onsubmit="return validate();" >
-		<form class="registration" >
+<div class="container" >
+		<form class="registration" novalidate="">
 			<h1>Реэстрація</h1>
 
 			<label for="username">
@@ -93,33 +93,37 @@
 			
 
 
-			<label for="select">
+			<label for="selectt">
 				<span>Виберіть один з трьох пунктів:*</span>
 
-				<select> 
+				<select id="nocheckSelect1">
+					<option value=""></option>
 					<option>  Пункт 1.  </option>
 					<option>  Пункт 3.  </option>
 					<option>  Пункт 3.  </option>
+				     <h3 id="select1" > Виберіть одиз з варіантів </h3>
 				</select>
 				
 			</label>
 
+			<label for="selecttt">
+				<span>Виберіть один з трьох пунктів:*</span>
 
-
-			<label for="Paymen">
-				<span> Виберіть спосіб оплати:*</span>
-				
-				<select> 
-				 <option> Пункт 1. </option>
-				 <option> Пункт 2. </option>
-				 <option> Пункт 3. </option> 
+				<select id="nocheckSelect2">
+					<option value="" ></option>
+					<option>  Пункт 1.  </option>
+					<option>  Пункт 3.  </option>
+					<option>  Пункт 3.  </option>
+				     <h3 id="select2" > Виберіть одиз з варіантів </h3>
 				</select>
+				
 			</label>
 
+		
 			<br>
 
 
-			<input type="button" style="display:block;" onclick="validate()" value="Register">
+			<input type="button" onclick="validate()" value="Register">
  
 		</form>
 	</div>
