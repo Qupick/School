@@ -87,10 +87,10 @@ var Go = function validate() {
      
 
      var finish = document.getElementById ("overFinish");
-      validate ().value;
+      validate ()= true.value;
          if (validate () === true) {
           alert ("finish"); // alert вместо window.local.href="путь к файлу"
-        } else if (validate () != false) {
+        } else if (validate () != true || null || undefined) {
           alert ("Заповніть всі поля");
         };
              
