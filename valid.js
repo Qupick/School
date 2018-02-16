@@ -90,7 +90,7 @@ var Go = function validate() {
       validate ()= true.value;
          if (validate () === true) {
           alert ("finish"); // alert вместо window.local.href="путь к файлу"
-        } else if (validate () != true || null || undefined) {
+        } else if (validate () != true) {
           alert ("Заповніть всі поля");
         };
              
