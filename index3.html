@@ -93,37 +93,37 @@
 			
 
 
-			<label for="selectt">
+			<label for="select">
 				<span>Виберіть один з трьох пунктів:*</span>
 
-				<select id="nocheckSelect1">
-					<option value=""></option>
-					<option>  Пункт 1.  </option>
-					<option>  Пункт 3.  </option>
-					<option>  Пункт 3.  </option>
-				     <h3 id="select1" > Виберіть одиз з варіантів </h3>
+				<select id="nocheckSelect1" >
+					<option value="" style="display:none; "></option>
+					<option value="1">  1  </option>
+					<option value="2">  2  </option>
+					<option value="3">  3  </option>
 				</select>
-				
+				<h3 id="select1" style="display:none;"> Виберіть одиз з варіантів </h3>
+
 			</label>
 
-			<label for="selecttt">
+			<label for="Payment">
 				<span>Виберіть один з трьох пунктів:*</span>
 
-				<select id="nocheckSelect2">
-					<option value="" ></option>
-					<option>  Пункт 1.  </option>
-					<option>  Пункт 3.  </option>
-					<option>  Пункт 3.  </option>
-				     <h3 id="select2" > Виберіть одиз з варіантів </h3>
+				<select id="nocheckSelect2" >
+					<option value="" style="display:none;" ></option>
+					<option value="1">  1 </option>
+					<option value="2">  2  </option>
+					<option value="3">  3  </option>
 				</select>
-				
+				<h3 id="select2" style="display:none;"> Виберіть одиз з варіантів </h3>
 			</label>
 
-		
+			<p id="overFinish"></p>
+			<h3 id="messageFinish" style="display:none;"> Реєстрація успішна!</h3>
 			<br>
 
 
-			<input type="button" onclick="validate()" value="Register">
+			<input type="button" onclick="Go()" value="Register">
  
 		</form>
 	</div>
