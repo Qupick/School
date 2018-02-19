@@ -11,12 +11,12 @@ var Go = function () {
  var sel2 = document.getElementById ("nocheckSelect2");
  
  // var id options Selects and Payments
- var nosel1 = document.getElementById ("nocheckSelect1");
+/* var nosel1 = document.getElementById ("nocheckSelect1");
  var nosel2 = document.getElementById ("nocheckSelect2");
  var over = document.getElementById ("overFinish");
-
+*/
  // Errors message.
- var userEror = document.getElementById ("userError");
+ /*var userEror = document.getElementById ("userError");
  var addressEror = document.getElementById ("addressError");
  var phoneEror = document.getElementById ("phoneError");
  var mailEror = document.getElementById ("mailError");
@@ -24,86 +24,98 @@ var Go = function () {
  var pass2Eror = document.getElementById ("pass2Error");
  var sel1Eror = document.getElementById ("select1");
  var sel2Eror = document.getElementById ("select2"); 
+*/
+   /* var Errors = ["userError", "addressError", "phoneError", "mailError", 
+    "passError", "pass2Error", "sel1Error", "sel2Error"];*/
 
-    var Errors = ["userError", "addressError", "phoneError", "mailError", 
-    "passError", "pass2Error", "sel1Error", "sel2Error"];
-
+    var Errors = [];
 
   username = user.value;
   if (username === "") {
-     document.getElementById ("userError").style.display="block";
-  } else if (username != ""){
-    document.getElementById ("userError").style.display="none";
-  }; 
- 
+     Errors.push ("userError");
+   }else {
+     document.getElementById ("userError").style.display="none"
+   };
+
+
   address = addressa.value;
   if (address === "") {
-      document.getElementById ("addressError").style.display="block";
-  } else if (username != ""){
-    document.getElementById ("addressError").style.display="none";
-  }; 
+     Errors.push ("addressError");
+   }else{
+     document.getElementById ("addressError").style.display="none"
+   };
+
 
   phone = number_phone.value;
   if (phone === "") {
-      document.getElementById ("numberError").style.display="block";
-  } else if (phone != "") {
-    document.getElementById ("numberError").style.display="none";
-  }; 
+     Errors.push ("numberError");
+   }else {
+     document.getElementById ("numberError").style.display="none"
+   };
   
+
   mail = email.value;
   if (mail === "") {
-      document.getElementById ("mailError").style.display="block";
-  } else if (mail != "") {
-    document.getElementById ("mailError").style.display="none";
-  };
+     Errors.push ("mailError");
+   } else {
+     document.getElementById ("mailError").style.display="none"
+   };
   
-  pass2 = password_repeat.value;
+
   pass = password.value;
   if (pass === "") {
-     document.getElementById ("pass1Error").style.display="block";
-  } else if (pass != ""){
-     document.getElementById ("pass1Error").style.display="none";
-  };  
-  if (pass != pass2) {
-      document.getElementById ("passisnoGood").style.display="block";
-  } else if (pass === pass2) {
-     document.getElementById ("passisnoGood").style.display="none";
-  };
-  if (pass2 === "") {
-     document.getElementById ("pass2Error").style.display="block"
-  }  else if (pass2 != "") {
-     document.getElementById ("pass2Error").style.display="none"
-  };
+     Errors.push ("pass1Error");
+   } else {
+     document.getElementById ("pass1Error").style.display="none"
+   };
   
+
+  pass2 = password_repeat.value;
+  if (pass != pass2) {
+     Errors.push ("passisnoGood");
+   } else {
+     document.getElementById ("passisnoGood").style.display="none"
+   };
+  
+
+  if (pass2 === "") {
+     Errors.push ("pass2Error");
+   } else {
+     document.getElementById ("pass2Error").style.display="none"    
+   };
+  
+  
+
   sel1 = nocheckSelect1.value;
   if (sel1 === "") {
-     document.getElementById ("select1").style.display="block";
-  } else if (sel1 != "") {
-     document.getElementById ("select1").style.display="none";
-  };
+     Errors.push ("select1");
+   } else {
+     document.getElementById ("select1").style.display="none"
+   };
+
+  
+
 
   sel2 = nocheckSelect2.value;
   if (sel2 === "") {
-     document.getElementById ("select2").style.display="block";
-  } else if (sel2 != "") {
-     document.getElementById ("select2").style.display="none";
-  };
-     //========================================================
-      
-
+     Errors.push ("select2");
+   } else {
+     document.getElementById ("select2").style.display="none"
+   };
      
-       Errors = true.value
-      if (Errors === true) {
-     alert ("no");
-    } else if (Errors != true) {
-      alert ("gooo");
-    } 
 
+  if (Errors.length > 0) {
+  for(var i=0; i<Errors.length; i++) {
+     document.getElementById(Errors[i]).style.display="block";
+   } 
+  };
+    
       
-  
-  }; // Function validate Registration 
-
-
-
-   
- 
+    if (Errors.length == 0) {
+      window.location.href="/home/soprano/Work/School/index3.html"
+      alert ("НАКАНЕЦ ТО БЛЯТЬ");
+      } else {
+      alert ("Заповніть всі поля");
+    };
+    
+}; // Function validate Registration 
