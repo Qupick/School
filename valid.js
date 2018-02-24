@@ -52,6 +52,7 @@ var Go = function () {
 
 
 
+
     address = addressa.value;
   if (address === "") {
      Errors.push("addressError");
@@ -61,26 +62,29 @@ var Go = function () {
   if (address.length > 255) {
     for (var i=0; i < address.length; i++){
       Errors.push ("noAddressGood");
+      document.getElementById("noAddressGood").style.display="none"
     };
-  }else{
-     document.getElementById("noAddressGood").style.display="none"
-   };
+  };
    
      
      var regex = /^[0-9]+$/;
+     var result2 = phone.value.search(regex);
+
      
-     var result2 = number_phone.search(regex);
-
-     console.log(result2);
-
+     phone = number_phone.value;
      if (result2 === -1) {
       Errors.push("phoneError");
      }else{
       document.getElementById("phoneError").style.display="none"
      };
-  
-  
-  
+
+     phone.length.value;
+   if (phone.length < 10) {
+    Errors.push("phoneError");
+   }else{
+    document.getElementById("phoneError").style.display="none"
+   };
+
     phone = number_phone.value;
   if (phone === "") {
      Errors.push("numberError");
@@ -88,7 +92,6 @@ var Go = function () {
      document.getElementById("numberError").style.display="none"
    };
   
-
 
     mail = email.value;
   if (mail === "") {
