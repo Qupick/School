@@ -1,135 +1,127 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<script src="valid.js" ></script>
-	<link rel="stylesheet" href="IndexCss.css">
-	<title>Validation</title>	
-</head>
-<body>
+	<!DOCTYPE html>
+	<html>
+	<head>
+		<meta charset="utf-8">
+		<script src="valid.js" ></script>
+		<link rel="stylesheet" href="IndexCss.css">
+		<title>Validation</title>	
+	</head>
+	<body>
 
-<div class="container" >
-		<form class="registration" novalidate="">
-			<h1>Реєстрація</h1>
+	<div class="container" >
+			<form class="registration" novalidate="">
+				<h1>Реєстрація</h1>
 
-			<label for="username">
-				<span>Ваше імя* </span>
+				<label for="username">
+					<span>Ваше імя* </span>
 
-				<input type="text"  class="reg" id="username" maxlength="32" minlength="4" required> 
-					<h3 id="userError" style="display:none">Ведіть Ваше ім"я</h3>
-					<h3 id="userGood" style="display:none">Поле заповнено.</h3>
+					<input type="text"  class="reg" id="username"  required> 
+						<h3 id="userError" style="display:none">Ведіть Ваше ім"я</h3>
+						<h3 id="noName" style="display:none">Поле містить не допустимі сивмоли або за коротке! </h3>
 
-				<ul class="input-requirements">
-					<li>Ім"я повинно бути не менше 4 символів і не більше 32</li>
-					<li>Ваше ім"я повинно складатись лише з букв</li>
-				</ul>
-			</label>
-			
-			
-
-			<label for="Address">
-				<span>Ваш адрес*</span>
-
-				<textarea type="text" class="reg" id="address" maxlength="255" required></textarea>
-					<h3 id="addressError" style="display:none">Ведіть Вашу адресу!</h3>
-					<h3 id="addressGood" style="display:none">Поле заповнено.</h3>
-
-				<ul class="input-requirements">
-					<li> Дозволено для ведення 255 букв</li>
-				</ul>
-			
-			</label>
-
-			
-
-			<label for="number_phone">
-				<span>Ваш номер телефону*</span>
+					<ul class="input-requirements">
+						<li>Ім"я повинно бути не менше 4 символів і не більше 32</li>
+						<li>Ваше ім"я повинно складатись лише з букв</li>
+					</ul>
+				</label>
 				
-				<input type="number" value="" class="reg" id="number_phone" maxlength="13" required>
-					<h3 id="numberError" style="display:none">Ведіть номер телефону!</h3>
-					<h3 id="numberGood" style="display:none">Поле заповнено.</h3>
+				
 
-				<ul class="input-requirements"> 
-					<li> Максимальна кількість чисел сягає - 13</li>
-				</ul>
+				<label for="Address">
+					<span>Ваш адрес*</span>
 
-			</label>
+					<textarea type="text" class="reg" id="address"  required></textarea>
+						<h3 id="addressError" style="display:none">Ведіть Вашу адресу!</h3>
+						<h3 id="noAddressGood" style="display:none">Перевищено допустиму кількість символів!</h3>
 
+					<ul class="input-requirements">
+						<li> Дозволено для ведення 255 букв</li>
+					</ul>
+				
+				</label>
 
+				
 
-			<label for="email">
-				<span>Ведіть @mail.*</span>
-				<input type="email" class="reg" id="email" required>
-					<h3 id="mailError" style="display:none">Ведіть електронну скриньку!</h3>
+				<label for="number_phone">
+					<span>Ваш номер телефону*</span>
 					
-				<ul class="input-requirements"> 
-					<li> Поле повинно виглядати some.email@gmail.com або аналогічно</li>
-				</ul>
-			</label>
+					<input type="number" value="" class="reg" id="number_phone" maxlength="13" required>
+						<h3 id="numberError" style="display:none">Ведіть номер телефону!</h3>
+						
+
+				<label for="email">
+					<span>Ведіть @mail.*</span>
+					<input type="email" class="reg" id="email" required>
+						<h3 id="mailError" style="display:none">Ведіть електронну скриньку!</h3>
+						
+					<ul class="input-requirements"> 
+						<li> Наприклад: some.email@gmail.com</li>
+					</ul>
+				</label>
 
 
-			<label for="password">
-				<span>Пароль*</span>
+				<label for="password">
+					<span>Пароль*</span>
 
-				<input type="password" class="reg" id="password" maxlength="100" minlength="6" required>
-					<h3 id="pass1Error" style="display:none">Ведіть пароль!</h3>
-					<h3 id="pass1Good" style="display:none">Поле заповнено.</h3>
+					<input type="password" class="reg" id="password"  required>
+						<h3 id="pass1Error" style="display:none">Ведіть пароль!</h3>
+						<h3 id="pass1NoGood" style="display:none">Пароль закороткий або задовгий!</h3>
 
-				<ul class="input-requirements">
-					<li>Мінімальна кількість символів для паролю - 6, максимальна - 100</li>
-					<li> Пароль може складатись з будь-яких символів</li>
-				</ul>
-			</label>
+					<ul class="input-requirements">
+						<li>Мінімальна кількість символів для паролю - 6, максимальна - 100</li>
+						<li> Пароль може складатись з будь-яких символів</li>
+					</ul>
+				</label>
 
-			
-			<label for="password_repeat">
-				<span>Підтвердження пароля:*</span>
-				<input type="password"  id="password_repeat" maxlength="100" minlength="6" required>
-					<h3 id="pass2Error" style="display:none">Підтвердіть пароль!!</h3>
-					<h3 id="passisGood" style="display:none">паролі співпадають.</h3>
-					<h3 id="passisnoGood" style="display:none">паролі не співпадають.</h3>
+				
+				<label for="password_repeat">
+					<span>Підтвердження пароля:*</span>
+					<input type="password"  id="password_repeat" maxlength="100" minlength="6" required>
+						<h3 id="pass2Error" style="display:none">Підтвердіть пароль!!</h3>
+						<h3 id="passisGood" style="display:none">паролі співпадають.</h3>
+						<h3 id="passisnoGood" style="display:none">паролі не співпадають.</h3>
 
-			</label>
-			
-
-
-			<label for="select">
-				<span>Виберіть один з трьох пунктів:*</span>
-
-				<select id="nocheckSelect1" >
-					<option value="" style="display:none; "></option>
-					<option value="1">  1  </option>
-					<option value="2">  2  </option>
-					<option value="3">  3  </option>
-				</select>
-				<h3 id="select1" style="display:none;"> Виберіть одиз з варіантів </h3>
-
-			</label>
-
-			<label for="Payment">
-				<span>Виберіть один з трьох пунктів:*</span>
-
-				<select id="nocheckSelect2" >
-					<option value="" style="display:none;" ></option>
-					<option value="1">  1 </option>
-					<option value="2">  2  </option>
-					<option value="3">  3  </option>
-				</select>
-				<h3 id="select2" style="display:none;"> Виберіть одиз з варіантів </h3>
-			</label>
-
-			<p id="overFinish"></p>
-			<h3 id="messageFinish" style="display:none;"> Реєстрація успішна!</h3>
-			<br>
+				</label>
+				
 
 
-			<input type="button" onclick="Go()" value="Register">
- 
-		</form>
-	</div>
+				<label for="select">
+					<span>Виберіть один з трьох пунктів:*</span>
 
-</body>
-</html>
+					<select id="nocheckSelect1" >
+						<option value="" style="display:none; "></option>
+						<option value="1">  1  </option>
+						<option value="2">  2  </option>
+						<option value="3">  3  </option>
+					</select>
+					<h3 id="select1" style="display:none;"> Виберіть одиз з варіантів </h3>
+
+				</label>
+
+				<label for="Payment">
+					<span>Виберіть один з трьох пунктів:*</span>
+
+					<select id="nocheckSelect2" >
+						<option value="" style="display:none;" ></option>
+						<option value="1">  1 </option>
+						<option value="2">  2  </option>
+						<option value="3">  3  </option>
+					</select>
+					<h3 id="select2" style="display:none;"> Виберіть одиз з варіантів </h3>
+				</label>
+
+				<p id="overFinish"></p>
+				<h3 id="messageFinish" style="display:none;"> Реєстрація успішна!</h3>
+				<br>
+
+
+				<input type="button" onclick="Go()" value="Register">
+	 
+			</form>
+		</div>
+
+	</body>
+	</html>
 
 
 

@@ -1,6 +1,6 @@
 
 var Go = function () {
- // inputs object
+
  var user = document.getElementById ("username");
  var addressa = document.getElementById ("address");
  var phone = document.getElementById ("number_phone");
@@ -10,97 +10,136 @@ var Go = function () {
  var sel1 = document.getElementById ("nocheckSelect1");
  var sel2 = document.getElementById ("nocheckSelect2");
  
- // var id options Selects and Payments
-/* var nosel1 = document.getElementById ("nocheckSelect1");
- var nosel2 = document.getElementById ("nocheckSelect2");
- var over = document.getElementById ("overFinish");
-*/
- // Errors message.
- /*var userEror = document.getElementById ("userError");
- var addressEror = document.getElementById ("addressError");
- var phoneEror = document.getElementById ("phoneError");
- var mailEror = document.getElementById ("mailError");
- var passEror = document.getElementById ("passError");
- var pass2Eror = document.getElementById ("pass2Error");
- var sel1Eror = document.getElementById ("select1");
- var sel2Eror = document.getElementById ("select2"); 
-*/
-   /* var Errors = ["userError", "addressError", "phoneError", "mailError", 
-    "passError", "pass2Error", "sel1Error", "sel2Error"];*/
+
 
     var Errors = [];
+    
 
-  username = user.value;
-  if (username === "") {
-     Errors.push ("userError");
+   
+    username = user.value;
+  if (username === ""){ 
+    Errors.push("userError");
    }else {
-     document.getElementById ("userError").style.display="none"
+    document.getElementById("userError").style.display="none"
    };
 
 
-  address = addressa.value;
+var reg = .match /\d/g;
+     
+
+
+    username != reg.value;
+   if (username === reg) {
+    Errors.push("noName");
+   document.getElementById("noName").style.display="none"
+    }
+     
+
+
+     if (username.length > 32 ) {
+    for (var i=0; i < username.length;  i++) {
+    Errors.push("noName");
+      document.getElementById("noName").style.display="none"
+   };
+  };
+
+  if (username.length < 4) {
+    for (var i=4; i > username.length; --i){
+      Errors.push("noName");
+      document.getElementById("noName").style.display="none"
+    };
+  };
+
+
+
+
+    address = addressa.value;
   if (address === "") {
-     Errors.push ("addressError");
-   }else{
-     document.getElementById ("addressError").style.display="none"
-   };
+     Errors.push("addressError");
+    } else {
+      document.getElementById("addressError").style.display="none"
+   }; 
+  if (address.length > 255) {
+    for (var i=0; i < address.length; i++){
+      Errors.push ("noAddressGood");
+      document.getElementById("noAddressGood").style.display="none"
+    };
+  };
+   
+     
+  
 
-
-  phone = number_phone.value;
+    phone = number_phone.value;
   if (phone === "") {
-     Errors.push ("numberError");
+     Errors.push("numberError");
    }else {
-     document.getElementById ("numberError").style.display="none"
+     document.getElementById("numberError").style.display="none"
    };
   
 
-  mail = email.value;
+    mail = email.value;
   if (mail === "") {
-     Errors.push ("mailError");
+     Errors.push("mailError");
    } else {
-     document.getElementById ("mailError").style.display="none"
+     document.getElementById("mailError").style.display="none"
    };
   
 
-  pass = password.value;
+    pass = password.value;
   if (pass === "") {
-     Errors.push ("pass1Error");
+     Errors.push("pass1Error");
    } else {
-     document.getElementById ("pass1Error").style.display="none"
+     document.getElementById("pass1Error").style.display="none"
    };
+
+
+    if (pass.length < 6) {
+      for (var i=6; i > pass.length; --i){
+        Errors.push("pass1NoGood");
+        document.getElementById("pass1NoGood").style.display="none"
+      };
+    };
+
+    if (pass.length > 100) {
+      for (var i=0; i < pass.length; i++){
+        Errors.push("pass1NoGood");
+        document.getElementById("pass1NoGood").style.display="none"
+      };
+    };
+
   
 
-  pass2 = password_repeat.value;
+    pass2 = password_repeat.value;
   if (pass != pass2) {
-     Errors.push ("passisnoGood");
+     Errors.push("passisnoGood");
    } else {
-     document.getElementById ("passisnoGood").style.display="none"
+     document.getElementById("passisnoGood").style.display="none"
    };
   
 
   if (pass2 === "") {
-     Errors.push ("pass2Error");
+     Errors.push("pass2Error");
    } else {
-     document.getElementById ("pass2Error").style.display="none"    
+     document.getElementById("pass2Error").style.display="none"    
    };
   
   
 
-  sel1 = nocheckSelect1.value;
+    sel1 = nocheckSelect1.value;
   if (sel1 === "") {
-     Errors.push ("select1");
+     Errors.push("select1");
    } else {
-     document.getElementById ("select1").style.display="none"
+     document.getElementById("select1").style.display="none"
    };
 
   
 
 
-  sel2 = nocheckSelect2.value;
+    sel2 = nocheckSelect2.value;
   if (sel2 === "") {
-     Errors.push ("select2");
+     Errors.push("select2");
    } else {
-     document.getElementById ("select2").style.display="none"
+     document.getElementById("select2").style.display="none"
    };
      
 
@@ -113,9 +152,9 @@ var Go = function () {
       
     if (Errors.length == 0) {
       window.location.href="/home/soprano/Work/School/index3.html"
-      alert ("НАКАНЕЦ ТО БЛЯТЬ");
+      alert ("Реєстрація завершена !");
       } else {
-      alert ("Заповніть всі поля");
+      alert ("Заповніть всі поля!");
     };
     
-}; // Function validate Registration 
+};
