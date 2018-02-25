@@ -1,192 +1,181 @@
 
 var Go = function () {
 
- var user = document.getElementById ("username");
- var addressa = document.getElementById ("address");
- var phone = document.getElementById ("number_phone");
- var mail = document.getElementById ("email");
- var pass = document.getElementById ("password");
- var pass2 = document.getElementById ("password_repeat")
- var sel1 = document.getElementById ("nocheckSelect1");
- var sel2 = document.getElementById ("nocheckSelect2");
+ var userValue = document.getElementById ("username");
+ var addressaValue = document.getElementById ("address");
+ var phoneValue = document.getElementById ("number_phone");
+ var mailValue = document.getElementById ("email");
+ var passValue = document.getElementById ("password");
+ var pass2Value = document.getElementById ("password_repeat")
+ var sel1Value = document.getElementById ("nocheckSelect1");
+ var sel2Value = document.getElementById ("nocheckSelect2");
  
 
 
-    var Errors = [];
+  var Errors = [];
     
 	   
-    username = user.value;
-  if (username === ""){ 
-    Errors.push("userError");
-   }else {
-    document.getElementById("userError").style.display="none"
-   };
+  userValue = username.value;
+    if (userValue === ""){ 
+      Errors.push("userError");
+    }else {
+      document.getElementById("userError").style.display="none"
+    };
 
 
-  var reg = /^[A-z]+$/;
-     
-  var result = username.search(reg);
+  var regName = /^[A-z]+$/;
+  var resultName = userValue.search(regName);
 
-  
-   if (result === -1) {
-    Errors.push("noName");
-    } else {
+    if (resultName === -1) {
+      Errors.push("noName");
+    }else {
       document.getElementById("noName").style.display="none"
     };
-     
+    
 
-
-     if (username.length > 32 ) {
+    if (username.length > 32 ) {
     for (var i=0; i < username.length;  i++) {
-    Errors.push("noName");
+      Errors.push("noName");
+    };
+    }else{
       document.getElementById("noName").style.display="none"
-   };
-  };
+    };
 
-     if (username.length < 4) {
+    if (username.length < 4) {
     for (var i=4; i > username.length; --i){
       Errors.push("noName");
+    };
+    }else{
       document.getElementById("noName").style.display="none"
     };
-  };
 
 
-
-
-    address = addressa.value;
-  if (address === "") {
-     Errors.push("addressError");
+  addressaValue = address.value;
+    if (addressaValue === "") {
+      Errors.push("addressError");
     } else {
       document.getElementById("addressError").style.display="none"
-   }; 
-  if (address.length > 255) {
-    for (var i=0; i < address.length; i++){
+    }if (addressaValue.length > 255) {
+    for (var i=0; i < addressaValue.length; i++){
       Errors.push ("noAddressGood");
+    };
+    }else{
       document.getElementById("noAddressGood").style.display="none"
     };
-  };
    
      
-     var regex = /^[0-9]+$/;
-     var result2 = phone.value.search(regex);
-
+  var regex = /^[0-9]+$/;
+  var result2 = phoneValue.value.search(regex);
      
-     phone = number_phone.value;
-     if (result2 === -1) {
+  phoneValue = number_phone.value;
+    if (result2 === -1) {
       Errors.push("phoneError");
-     }else{
+    }else{
       document.getElementById("phoneError").style.display="none"
-     };
+    };
 
-     phone.length.value;
-   if (phone.length < 10) {
-    Errors.push("phoneError");
-   }else{
-    document.getElementById("phoneError").style.display="none"
-   };
 
-    phone = number_phone.value;
-  if (phone === "") {
-     Errors.push("numberError");
-   }else {
-     document.getElementById("numberError").style.display="none"
-   };
+  phoneValue.length.value;
+    if (phoneValue.length < 10) {
+      Errors.push("phoneError");
+    }else{
+      document.getElementById("phoneError").style.display="none"
+    };
+
+
+  phoneValue = number_phone.value;
+    if (phoneValue === "") {
+      Errors.push("numberError");
+    }else {
+      document.getElementById("numberError").style.display="none"
+    };
   
 
-    mail = email.value;
-  if (mail === "") {
-     Errors.push("mailError");
-   } else {
-     document.getElementById("mailError").style.display="none"
-   };
-  
+  mailValue = email.value;
+    if (mailValue === "") {
+      Errors.push("mailError");
+    }else {
+      document.getElementById("mailError").style.display="none"
+    };
+ 
+ 
+  var reg1 = /^[-._0-9A-za-z]+@[a-z]+[.][a-z]+$/;
+  var result1 = mailValue.search(reg1);
 
-
-    var reg1 = /^[0-9A-za-z]+@[a-z]+[.][a-z]+$/;
-    var result1 = mail.search(reg1);
-
-
-
-    
     if (result1 === -1){
       Errors.push("noMail");
-    } else {
+    }else {
       document.getElementById("noMail").style.display="none"
     };
 
 
-
-    pass = password.value;
-  if (pass === "") {
-     Errors.push("pass1Error");
-   } else {
-     document.getElementById("pass1Error").style.display="none"
-   };
-
+  passValue = password.value;
+    if (passValue === "") {
+      Errors.push("pass1Error");
+    }else {
+      document.getElementById("pass1Error").style.display="none"
+    };
 
   
-    if (pass.length < 6) {
-      for (var i=6; i > pass.length; --i){
-        Errors.push("pass1NoGood");
-      }}else{
+    if (passValue.length < 6) {
+    for (var i=6; i > passValue.length; --i){
+      Errors.push("pass1NoGood");
+    }}else{
       document.getElementById("pass1NoGood").style.display="none"
     };
 
-    if (pass.length > 100) {
-      for (var i=0; i < pass.length; i++){
-        Errors.push("pass1NoGood");
-      }}else{
-       document.getElementById("pass1NoGood").style.display="none"
+
+    if (passValue.length > 100) {
+    for (var i=0; i < passValue.length; i++){
+      Errors.push("pass1NoGood");
+    }}else{
+      document.getElementById("pass1NoGood").style.display="none"
+    };
+  
+
+  pass2Value = password_repeat.value;
+    if (passValue != pass2Value) {
+      Errors.push("passisnoGood");
+    }else {
+      document.getElementById("passisnoGood").style.display="none"
+    };
+  
+
+    if (pass2Value === "") {
+      Errors.push("pass2Error");
+    }else {
+      document.getElementById("pass2Error").style.display="none"    
+    };
+  
+  
+  sel1Value = nocheckSelect1.value;
+    if (sel1Value === "") {
+      Errors.push("select1");
+    }else {
+      document.getElementById("select1").style.display="none"
     };
 
   
-
-    pass2 = password_repeat.value;
-  if (pass != pass2) {
-     Errors.push("passisnoGood");
-   } else {
-     document.getElementById("passisnoGood").style.display="none"
-   };
-  
-
-  if (pass2 === "") {
-     Errors.push("pass2Error");
-   } else {
-     document.getElementById("pass2Error").style.display="none"    
-   };
-  
-  
-
-    sel1 = nocheckSelect1.value;
-  if (sel1 === "") {
-     Errors.push("select1");
-   } else {
-     document.getElementById("select1").style.display="none"
-   };
-
-  
-
-
-    sel2 = nocheckSelect2.value;
-  if (sel2 === "") {
-     Errors.push("select2");
-   } else {
-     document.getElementById("select2").style.display="none"
-   };
+  sel2Value = nocheckSelect2.value;
+    if (sel2Value === "") {
+      Errors.push("select2");
+    }else {
+      document.getElementById("select2").style.display="none"
+    };
      
 
-  if (Errors.length > 0) {
-  for(var i=0; i<Errors.length; i++) {
-     document.getElementById(Errors[i]).style.display="block";
-   } 
-  };
+    if (Errors.length > 0) {
+    for(var i=0; i<Errors.length; i++) {
+      document.getElementById(Errors[i]).style.display="block";
+    } 
+    };
     
       
-    if (Errors.length == 0) {
+   if (Errors.length == 0) {
       window.location.href="/home/soprano/Work/School/index3.html"
-      alert ("Реєстрація завершена !");
-      } else {
-      alert ("Заповніть всі поля!");
+      alert("Реєстрація завершена !");
+    }else{
+      alert("Заповніть всі поля!");
     };
     
 };
