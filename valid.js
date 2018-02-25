@@ -23,7 +23,7 @@ var Go = function () {
     };
 
 
-  var regName = /^[A-z]+$/;
+  var regName = /^[A-zА-я]+$/;
   var resultName = userValue.search(regName);
 
     if (resultName === -1) {
@@ -33,16 +33,16 @@ var Go = function () {
     };
     
 
-    if (username.length > 32 ) {
-    for (var i=0; i < username.length;  i++) {
+    if (userValue.length > 32 ) {
+    for (var i=0; i < userValue.length;  i++) {
       Errors.push("noName");
     };
     }else{
       document.getElementById("noName").style.display="none"
     };
 
-    if (username.length < 4) {
-    for (var i=4; i > username.length; --i){
+    if (userValue.length < 4) {
+    for (var i=4; i > userValue.length; --i){
       Errors.push("noName");
     };
     }else{
